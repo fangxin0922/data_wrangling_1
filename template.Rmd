@@ -5,6 +5,31 @@ date: "9/23/2021"
 output: github_document
 ---
 
-```{r setup, echo = False, message = False}
+```{r setup, echo = FALSE, message = FALSE}
 library(tidyverse)
 ```
+
+## import some data 
+
+```{r}
+litters_df <- 
+  read_csv(
+  "~/Desktop/Columbia 2021 Fall/Data Science/data_wrangling_1/data/FAS_litters.csv", 
+  col_types = cols(Group = col_character())) %>%  #use tab to find path 
+  janitor::clean_names() #we don't need the other functions of janitor package
+```
+##create better names
+```{r}
+names(litters_df)
+```
+
+##look at the dataset 
+```{r}
+litters_df 
+skimr::skim(litters_df) #summary of the dataset
+```
+```{r}
+
+```
+
+
